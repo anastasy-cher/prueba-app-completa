@@ -8,6 +8,7 @@ if(process.env.ENTORNO == 'develop'){
     db_utilizar = database
 }
 
+console.log(db_utilizar)
 const pool = mysql.createPool(db_utilizar)
 
 module.exports = pool

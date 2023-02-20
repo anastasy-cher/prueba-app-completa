@@ -7,7 +7,7 @@ const { engine } = require('express-handlebars')
 const flash = require('connect-flash')
 const session = require('express-session')
 const mysqlstore = require('express-mysql-session')
-const {database} = require('./keys')
+const {database,database_cc} = require('./keys')
 const passport = require('passport')
 
 const indexRouter = require('./routes/index');
@@ -34,7 +34,7 @@ app.use(session({
   secret: 'secret',
   resave: false,
   saveUninitialized: false,
-  store: new mysqlstore(database)
+  store: new mysqlstore(database_cc)
 }))
 app.use(flash())
 
